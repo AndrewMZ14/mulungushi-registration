@@ -7,14 +7,14 @@ const app = express();
 const PORT = 3000;
 const UI_ORIGIN = "http://localhost:5500";
 
-// --- CORS ---
-// app.use(cors({
-//   origin: UI_ORIGIN,
-//   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-//   allowedHeaders: ["Content-Type"],
-//   credentials: true,
-//   exposedHeaders: ["ETag", "Location"],
-// }));
+
+app.use(cors({
+  origin: UI_ORIGIN,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+  credentials: true,
+  exposedHeaders: ["ETag", "Location"],
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // for /inspect form data
